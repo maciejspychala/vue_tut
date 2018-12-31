@@ -7,8 +7,18 @@
     </head>
     <body>
         <div id="app">
-            {{ message }}
+            <span> {{ title }} </span>
+            <ol>
+                <li v-for='todo in todos'>
+                    {{ todo.text }}
+                </li>
+            </ol>
+            <div>
+                <input v-model="newTodo">
+                <button v-on:click="addTodo" v-bind:disabled="newTodo === ''">Add todo</button>
+            </div>
         </div>
+
         <script src="main.js"></script>
     </body>
 </html>
