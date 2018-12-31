@@ -9,9 +9,12 @@
         <div id="app">
             <span> {{ title }} </span>
             <ol>
-                <li v-for='todo in todos'>
-                    {{ todo.text }}
-                </li>
+                <todo
+                    v-for="todo in todos"
+                    v-bind:todo="todo"
+                    v-bind:key="todo.id"
+                    >
+                </todo>
             </ol>
             <div>
                 <input v-model="newTodo">
