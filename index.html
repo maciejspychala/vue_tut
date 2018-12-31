@@ -16,7 +16,7 @@
             </todo>
             <div>
                 <input v-model="newTodo">
-                <button v-on:click="addTodo" v-bind:disabled="newTodo === ''">Add todo</button>
+                <button v-on:click="addTodo" v-bind:disabled="disabledAdd()">Add todo</button>
             </div>
         </div>
 

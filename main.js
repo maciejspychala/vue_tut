@@ -18,6 +18,9 @@ var app = new Vue({
         addTodo: function() {
             this.todos.push({ id: this.todos.length, done: false, text: this.newTodo });
             this.newTodo = '';
+        },
+        disabledAdd: function(text) {
+            return this.newTodo.length === 0;
         }
     }
 });
