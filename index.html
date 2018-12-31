@@ -8,14 +8,12 @@
     <body>
         <div id="app">
             <span> {{ title }} </span>
-            <ol>
-                <todo
-                    v-for="todo in todos"
-                    v-bind:todo="todo"
-                    v-bind:key="todo.id"
-                    >
-                </todo>
-            </ol>
+            <todo
+                v-for="todo in todos"
+                v-bind:todo="todo"
+                v-bind:key="todo.id"
+                >
+            </todo>
             <div>
                 <input v-model="newTodo">
                 <button v-on:click="addTodo" v-bind:disabled="newTodo === ''">Add todo</button>

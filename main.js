@@ -1,6 +1,6 @@
 Vue.component('todo' , {
     props: ['todo'],
-    template: '<li>{{ todo.text }}</li>'
+    template: '<div><input type="checkbox" v-model="todo.done"> {{ todo.text }}</div>'
 })
 
 var app = new Vue({
@@ -8,15 +8,15 @@ var app = new Vue({
     data: {
         title: 'todo list',
         todos: [
-            { id: 0, text: 'git init' },
-            { id: 1, text: 'git add -A' },
-            { id: 2, text: 'git commit' }
+            { id: 0, done: true, text: 'git init' },
+            { id: 1, done: false, text: 'git add -A' },
+            { id: 2, done: false, text: 'git commit' }
         ],
         newTodo: ''
     },
     methods: {
         addTodo: function() {
-            this.todos.push({ id: this.todos.length, text: this.newTodo });
+            this.todos.push({ id: this.todos.length, done: false, text: this.newTodo });
             this.newTodo = '';
         }
     }
