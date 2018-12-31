@@ -10,17 +10,16 @@
             <span> {{ title }} </span>
             <todo
                 v-for="todo in todos"
-                v-bind:todo="todo"
-                v-bind:key="todo.id"
+                :todo="todo"
+                :key="todo.id"
                 >
             </todo>
             <div>
                 <input v-model="newTodo">
-                <button v-on:click="addTodo" v-bind:disabled="disabledAdd()">Add todo</button>
+                <button @click="addTodo" :disabled="disabledAdd()">Add todo</button>
             </div>
         </div>
 
         <script src="main.js"></script>
     </body>
 </html>
-
