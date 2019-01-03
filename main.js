@@ -12,7 +12,8 @@ var app = new Vue({
             { id: 1, done: false, text: 'git add -A' },
             { id: 2, done: false, text: 'git commit' }
         ],
-        newTodo: ''
+        newTodo: '',
+        yesno: ''
     },
     methods: {
         addTodo: function() {
@@ -22,5 +23,11 @@ var app = new Vue({
         disabledAdd: function(text) {
             return this.newTodo.length === 0;
         }
+    },
+    created: function() {
+        console.log('xd');
+        axios.get('https://yesno.wtf/api')
+            .then(resp => app.yesno = resp.data.answer)
+            .catch(err => console.log(err));
     }
 });
