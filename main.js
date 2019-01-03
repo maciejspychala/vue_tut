@@ -15,6 +15,11 @@ var app = new Vue({
         newTodo: '',
         yesno: ''
     },
+    computed: {
+        isAwesome: function() {
+            return this.yesno === 'yes';
+        }
+    },
     methods: {
         addTodo: function() {
             this.todos.push({ id: this.todos.length, done: false, text: this.newTodo });
