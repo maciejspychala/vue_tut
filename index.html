@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="styles.css">
     </head>
     <body>
         <div id="app">
@@ -19,7 +20,10 @@
                 <input v-model="newTodo">
                 <button @click="addTodo" :disabled="disabledAdd()">Add todo</button>
             </div>
-            <div v-if="yesno">Is it awesome? {{ yesno }}.</div>
+            <div v-if="yesno">
+                Is it awesome?
+                <span :class="{ yes: isAwesome, no: !isAwesome }">{{ yesno }}.</span>
+            </div>
         </div>
 
         <script src="main.js"></script>
